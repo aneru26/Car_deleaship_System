@@ -9,6 +9,10 @@ use Illuminate\Support\Facades\DB;
 class Purchase_Parts extends Model
 {
     use HasFactory;
+    
+    protected $casts = [
+        'purchase_date' => 'datetime',
+    ];
 
     static public function getSingle($id) 
     {

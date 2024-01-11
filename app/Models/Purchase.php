@@ -9,6 +9,10 @@ class Purchase extends Model
 {
     use HasFactory;
 
+    protected $casts = [
+        'purchase_date' => 'datetime',
+    ];
+
     protected $table ="purchases";
 
     static public function getSingle($id) 

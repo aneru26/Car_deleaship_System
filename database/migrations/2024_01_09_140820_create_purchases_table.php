@@ -19,6 +19,7 @@ return new class extends Migration
             $table->foreign('customer_id')->references('id')->on('users');
             $table->tinyInteger('is_delete')->default(0);
             $table->string('status')->default('pending');
+            $table->timestamp('purchase_date')->default(now());
             $table->timestamps();
         });
     }

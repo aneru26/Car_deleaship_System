@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Purchase Car</h1>
+            <h1>Purchase Car (Total : {{ $getRecord->total() }})</h1>
           </div>
 
           
@@ -44,7 +44,7 @@
                       <th>Price</th>
                       <th >Puchase By</th>
                       <th >Status</th>
-                      <th >Created Date</th>
+                      <th >Purchased Date</th>
                       
                     </tr>
                   </thead>
@@ -63,7 +63,8 @@
                       <td>{{ $value->price }}</td>
                       <td>{{ $value->name }} {{ $value->last_name }}</td>
                       <td>{{ $value->status }}</td>
-                      <td>{{ $value->created_at->diffforhumans() }}</td>
+                      <td>{{ $value->purchase_date->format('M d, Y') }}</td>
+
                     </tr>
                      
                    @empty

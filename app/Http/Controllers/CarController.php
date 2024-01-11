@@ -132,6 +132,7 @@ class CarController extends Controller
     $purchase = new Purchase;
     $purchase->car_id = $carId;
     $purchase->customer_id = Auth::user()->id; // Assuming you have a customers table
+    $purchase->purchase_date = now();
 
     // Save the purchase record
     $purchase->save();

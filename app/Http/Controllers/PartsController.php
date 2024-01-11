@@ -127,7 +127,7 @@ public function customerlist()
     $purchase = new Purchase_Parts;
     $purchase->parts_id = $partsId;
     $purchase->customer_id = Auth::user()->id; // Assuming you have a customers table
-
+    $purchase->purchase_date = now();
     // Save the purchase record
     $purchase->save();
 

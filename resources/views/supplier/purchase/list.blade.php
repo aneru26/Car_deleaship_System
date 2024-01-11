@@ -9,7 +9,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1>Purchase Car</h1>
+            <h1>Purchase Car (Total : {{ $getRecord->total() }})</h1>
           </div>
 
           
