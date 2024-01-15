@@ -48,13 +48,29 @@ class Purchase extends Model
         return $return;
     }
 
-    static public function getcustomerRecord()
+    static public function getcustomerRecordAccepted()
     {
 
 
         $return = Purchase::select('purchases.*','cars.*','users.name as name', 'users.last_name as last_name')
                 ->join('cars', 'cars.id', '=', 'purchases.car_id')
                 ->join('users', 'users.id', '=', 'purchases.customer_id')
+                ->where('purchases.status','=', 'accepted')
+                ->where('purchases.is_delete','=', 0)
+                ->orderBy('purchases.id','desc')
+                ->paginate(10);
+
+        return $return;
+    }
+
+    static public function getcustomerRecordDecline()
+    {
+
+
+        $return = Purchase::select('purchases.*','cars.*','users.name as name', 'users.last_name as last_name')
+                ->join('cars', 'cars.id', '=', 'purchases.car_id')
+                ->join('users', 'users.id', '=', 'purchases.customer_id')
+                ->where('purchases.status','=', 'declined')
                 ->where('purchases.is_delete','=', 0)
                 ->orderBy('purchases.id','desc')
                 ->paginate(10);

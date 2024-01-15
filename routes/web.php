@@ -149,6 +149,7 @@ Route::group(['middleware' => 'student'], function (){
     Route::get('student/class/delete/{id}',[ClassController::class, 'facultydelete'] );
 
     //Purchase Car
+    Route::get('student/notpurchase/list',[PurchaseController::class,'notpurchaselist'] );
     Route::get('student/purchase/list',[PurchaseController::class,'purchaselist'] );
     Route::get('student/cars/purchase/{id}',[CarController::class,'customerpurchase'] );
     Route::post('student/cars/purchase/{id}',[CarController::class,'customerpurchasestore'] );

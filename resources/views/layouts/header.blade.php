@@ -291,18 +291,40 @@
           </a>
           </li>
 
-        <li class="nav-item">
-          <a href="{{ url('student/purchase/list')}}" class="nav-link @if(Request::segment(2) == 'purchase')active @endif">
-            <i class="nav-icon far fa-file"></i>
-            <p>
-              Purchase Car
-            </p>
-          </a>
-        </li>
+          <li class="nav-item has-treeview">
+            <a href="#" class="nav-link">
+              <i class="nav-icon fas fa-shopping-cart"></i>
+              <p>
+              <p>
+                 Purhase Car
+                <i class="right fas fa-angle-left"></i>
+              </p>
+            </a>
+            <ul class="nav nav-treeview">
+              <li class="nav-item">
+                <a href="{{ url('student/notpurchase/list')}}" class="nav-link @if(Request::segment(2) == 'purchase')active @endif">
+                  <i class="nav-icon fas fa-times"></i>
+
+                  <p>
+                    Not Sold Cars
+                  </p>
+                </a>
+              </li>
+              <li class="nav-item">
+                <a href="{{ url('student/purchase/list')}}" class="nav-link @if(Request::segment(2) == 'sold')active @endif">
+                  <i class="nav-icon fas fa-money-bill"></i>
+                  <p>
+                    Sold Cars
+                  </p>
+                </a>
+              </li>
+            </ul>
+          </li>
+          
 
         <li class="nav-item">
           <a href="{{ url('student/purchase_parts/list')}}" class="nav-link @if(Request::segment(2) == 'purchase_parts')active @endif">
-            <i class="nav-icon far fa-file"></i>
+            <i class="nav-icon fas fa-shopping-cart"></i>
             <p>
               Purchase Parts
             </p>

@@ -43,9 +43,16 @@ class PurchaseController extends Controller
     }
 
 //customer
+    public function notpurchaselist()
+    {
+        $data['getRecord']= Purchase::getcustomerRecordDecline();
+        $data['header_title'] = "Cars";
+        return view('student.purchase.list', $data);
+    }
+
     public function purchaselist()
     {
-        $data['getRecord']= Purchase::getcustomerRecord();
+        $data['getRecord']= Purchase::getcustomerRecordAccepted();
         $data['header_title'] = "Cars";
         return view('student.purchase.list', $data);
     }
