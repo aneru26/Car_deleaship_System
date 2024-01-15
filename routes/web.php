@@ -231,8 +231,8 @@ Route::group(['middleware' => 'supplier'], function (){
     Route::get('supplier/purchase/delete/{id}',[PurchasePartsController::class, 'delete'] );
 
 
-    Route::get('dealer/change_password',[UserController::class, 'change_password'] );
-    Route::post('dealer/change_password',[UserController::class, 'update_change_password'] );
+    Route::get('supplier/change_password',[UserController::class, 'change_password'] );
+    Route::post('supplier/change_password',[UserController::class, 'update_change_password'] );
 
     
 

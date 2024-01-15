@@ -125,7 +125,6 @@ class UserController extends Controller
         $student->status = trim($request->status);
         $student->email = trim($request->email);
         
-        $student->password = Hash::make($request->password);
         $student->save();
 
         return redirect()->back()->with('succes',"Account successfully Updated");
