@@ -51,7 +51,7 @@ class Car extends Model
             ->whereNotIn('cars.id', $purchasedCarIds)
             ->where('cars.is_delete', '=', 0)
             ->orderBy('cars.id', 'desc')
-            ->paginate(10);
+            ->paginate(5);
 
         return $availableCars;
     }
